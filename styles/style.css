@@ -1,0 +1,232 @@
+html {
+  color: #000;
+  background: #fff;
+  height: 100%; }
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dd,
+ul,
+ol,
+header,
+footer,
+article,
+aside,
+details,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0; }
+
+article,
+aside,
+details,
+menu,
+nav,
+section {
+  display: block; }
+
+body,
+button,
+input,
+select,
+textarea {
+  font: 13px/1.5 tahoma, arial, 'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Microsoft Yahei', \5b8b\4f53; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+ol,
+ul {
+  list-style: none; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: 500; }
+
+img {
+  border: none;
+  vertical-align: top; }
+
+a {
+  text-decoration: none;
+  color: #3487E2; }
+
+a:hover {
+  text-decoration: underline; }
+
+.clearfixed {
+  zoom: 1; }
+
+.clearfixed:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: "";
+  clear: both;
+  height: 0; }
+
+.fn-left {
+  float: left; }
+
+.fn-right {
+  float: right; }
+
+.fn-hide {
+  display: none; }
+
+.fn-text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+input,
+textarea,
+select {
+  outline: 0;
+  resize: none; }
+
+.mg10 {
+  margin-top: 10px !important; }
+
+/***common***/
+html,
+body {
+  background-color: #E3E4E9;
+  color: #333; }
+
+.wrapper {
+  width: 100%;
+  min-width: 1200px; }
+
+.header-top {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 100; }
+
+.hdtop {
+  position: relative;
+  min-width: 1200px;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f4f6fc;
+  color: #666;
+  z-index: 10; }
+  .hdtop a,
+  .hdtop a:visited {
+    color: #666; }
+
+.hdinner {
+  position: relative;
+  margin: 0 20px; }
+  .hdinner .section-l {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    width: 200px;
+    color: #666;
+    font-size: 14px;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  .hdinner .section_c {
+    position: absolute;
+    left: 50%;
+    width: 600px;
+    margin-left: -345px;
+    font-size: 14px; }
+    .hdinner .section_c a {
+      overflow: hidden;
+      float: left;
+      position: relative;
+      width: 4.2em;
+      height: 57px;
+      margin-right: 40px;
+      text-align: center; }
+    .hdinner .section_c .active {
+      border-bottom: 3px solid #FC923F;
+      font-weight: 700; }
+  .hdinner .search-f {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    width: 300px;
+    height: 40px;
+    margin-left: 100px; }
+    .hdinner .search-f .f-field {
+      padding: 10px 20px 10px 0;
+      border: 1px solid #D6DAE5;
+      background: #fff;
+      border-radius: 2px;
+      height: 18px; }
+    .hdinner .search-f .search-text {
+      display: block;
+      width: 235px;
+      height: 20px;
+      line-height: 20px;
+      background: 0 0;
+      border: 0 none;
+      border-radius: 2px;
+      color: #666;
+      padding-left: 15px; }
+    .hdinner .search-f .search-btn {
+      position: absolute;
+      top: 13px;
+      right: 20px;
+      width: 16px;
+      height: 16px;
+      background-position: -120px -30px;
+      border: 0 none;
+      vertical-align: middle;
+      cursor: pointer; }
+
+.search-btn,
+.com-use-l .common-use-title:after,
+.hdtop .section_c a:before {
+  background: url(../images/header/header.png) no-repeat;
+  content: ' ';
+  overflow: hidden;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
+  vertical-align: middle; }
+
+.app-top-nav-l.active:before, .app-top-nav-l:hover:before {
+  background-position: 0px -30px; }
+
+.app-top-nav-l:before {
+  background-position: 0px 0; }
+
+.crm-top-nav-l.active:before, .crm-top-nav-l:hover:before {
+  background-position: -30px -30px; }
+
+.crm-top-nav-l:before {
+  background-position: -30px 0; }
+
+.apps-top-nav-l.active:before, .apps-top-nav-l:hover:before {
+  background-position: -60px -30px; }
+
+.apps-top-nav-l:before {
+  background-position: -60px 0; }
+
+.manage-top-nav-l.active:before, .manage-top-nav-l:hover:before {
+  background-position: -90px -30px; }
+
+.manage-top-nav-l:before {
+  background-position: -90px 0; }
+
+/*# sourceMappingURL=style.css.map */
