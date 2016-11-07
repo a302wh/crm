@@ -185,9 +185,9 @@ body {
       width: 235px;
       height: 20px;
       line-height: 20px;
-      background: 0 0;
+      /*background: 0 0;*/
       border: 0 none;
-      border-radius: 2px;
+      /*border-radius: 2px;*/
       color: #666;
       padding-left: 15px; }
     .hdinner .search-f .search-btn {
@@ -198,7 +198,6 @@ body {
       height: 16px;
       background-position: -120px -30px;
       border: 0 none;
-      vertical-align: middle;
       cursor: pointer; }
   .hdinner .section-r {
     float: right;
@@ -305,6 +304,9 @@ body {
   float: left;
   width: 600px;
   padding: 0 0 30px; }
+.page-content .p-side-wrapper {
+  float: right;
+  width: 310px; }
 
 .p-nav-wrapper .p-section-header {
   position: relative;
@@ -578,5 +580,33 @@ body {
           left: -10px;
           color: #E3E4E9;
           font-style: normal; }
+
+/********************************************/
+.p-side-wrapper .side-section {
+  position: relative;
+  margin: 0 0 15px;
+  padding-top: 19px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  background: #FFF;
+  border-radius: 2px; }
+  .p-side-wrapper .side-section .s-header {
+    height: 14px;
+    padding: 0 16px 0 17px; }
+    .p-side-wrapper .side-section .s-header .title {
+      float: left;
+      font-size: 14px;
+      line-height: 14px;
+      color: #333; }
+    .p-side-wrapper .side-section .s-header .colleagues {
+      float: right;
+      line-height: 12px;
+      font-size: 12px;
+      color: #3487e2; }
+  .p-side-wrapper .side-section .s-content {
+    width: 276px;
+    padding: 9px 13px 20px 19px; }
+    .p-side-wrapper .side-section .s-content .p-colleague {
+      line-height: 46px;
+      text-align: center; }
 
 /*# sourceMappingURL=style.css.map */
