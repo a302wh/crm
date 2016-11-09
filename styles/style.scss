@@ -79,6 +79,18 @@ a:hover {
     text-decoration: underline;
 }
 
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+    font-style: normal;
+    font-weight: 500
+}
+
 .clearfixed {
     zoom: 1;
 }
@@ -291,14 +303,14 @@ $head-four-icon:( app:0, crm:1, apps:2, manage:3);
 @each $icon,
 $num in $head-four-icon {
     .#{$icon}-top-nav-l {
-        &.active:before,
-        &:hover:before {
-            background-position: $num * -30px -30px;
+        &:before {
+            background-position: $num * -30px 0!important;
         }
     }
     .#{$icon}-top-nav-l {
-        &:before {
-            background-position: $num * -30px 0;
+        &.active:before,
+        &:hover:before {
+            background-position: $num * -30px -30px!important;
         }
     }
 }
@@ -383,27 +395,27 @@ $num in $head-four-icon {
                 vertical-align: middle;
             }
         }
-        .p-section-nav {
+    }
+    .p-section-nav {
+        font-size: 13px;
+        width: 180px;
+        padding: 7px 20px;
+        border-top: 0;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        li {
+            position: relative;
+            color: #3e5685;
             font-size: 13px;
-            width: 180px;
-            padding: 7px 20px;
-            border-top: 0;
-            border-bottom-left-radius: 2px;
-            border-bottom-right-radius: 2px;
-            li {
-                position: relative;
-                color: #3e5685;
-                font-size: 13px;
-                line-height: 28px;
-                @extend %fn-text-overflow;
-                a {
-                    color: #4D6595;
-                    width: 100%;
-                    display: inline-block;
-                    &.cur {
-                        color: #FC923F;
-                        font-weight: 700;
-                    }
+            line-height: 28px;
+            @extend %fn-text-overflow;
+            a {
+                color: #4D6595;
+                width: 100%;
+                display: inline-block;
+                &.cur {
+                    color: #FC923F;
+                    font-weight: 700;
                 }
             }
         }
@@ -734,5 +746,145 @@ $num in $head-four-icon {
                 text-align: center;
             }
         }
+    }
+}
+
+
+/*********list.html************/
+
+.crm-container {
+    position: absolute;
+    top: 60px;
+    min-width: 1160px;
+    height: 100%;
+}
+
+.nav-aside {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    background-color: #2d3037;
+    .new-add {
+        padding: 20px 20px 0;
+        margin-bottom: 15px;
+        .add-btn {
+            height: 38px;
+            line-height: 38px;
+            border-radius: 3px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+            background: #585e6b;
+            color: #c9cdd4;
+            font-size: 14px;
+            text-align: center;
+            cursor: pointer;
+            em {
+                font-size: 20px;
+                margin-right: 10px;
+                vertical-align: -1px;
+                background: 0 0;
+                position: static;
+            }
+            &:hover{
+                &+.add-list{
+                    display: block;
+                }
+            }
+        }
+        .add-list {
+            display: none;
+            position: absolute;
+            top: 58px;
+            left: 20px;
+            padding: 10px 0;
+            width: 160px;
+            line-height: 40px;
+            background: #434752;
+            border-radius: 0 0 4px 4px;
+            z-index: 10;
+            a {
+                position: relative;
+                display: block;
+                padding-left: 70px;
+                color: #aaadb3;
+                &:hover {
+                    text-decoration: none;
+                    color: #fc923f;
+                }
+                em {
+                    top: 10px;
+                    left: 38px;
+                }
+            }
+            &:hover{
+                display: block;
+            }
+        }
+    }
+    .menu-section {
+        line-height: 48px;
+        font-size: 13px;
+        &.pend-list,
+        &.set-list{
+            a{
+                text-indent: 0;
+            }            
+        }
+        &.dash-list{
+            a{
+                text-indent: 30px;
+            }
+        }
+        .menu-btn {
+            padding-left: 20px;
+            font-size: 15px;
+            color: #bec2c9;
+            cursor: pointer;
+        }
+        .menu-slide {
+            ul {
+                li {
+                    a {
+                        position: relative;
+                        display: block;
+                        padding: 0 20px 0 35px;
+                        color: #aaadb3;
+                        &:hover {
+                            text-decoration: none;
+                            color: #fc923f;
+                        }
+                        em{
+                            top: 14px;
+                            left: 34px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    em {
+        position: absolute;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-image: url(../images/leftnav.png);
+        background-repeat: no-repeat;
+    }
+}
+
+$leftnav-icon:( sale:22, cus:3, contact:4, clue:5, oppo:6, contract:12, cb:10, gb:11, bill:16, customer:8, order:13, recorder:14,index:0,info:1);
+@each $icon, $num in $leftnav-icon {
+    .add-list,
+    .menu-slide{
+        a:hover {
+            .ico-#{$icon} {
+                background-position: $num * -20px 0!important;
+            }
+        }
+    }
+    .ico-#{$icon} {
+        background-position: $num * -20px -20px!important;
     }
 }
