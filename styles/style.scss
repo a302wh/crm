@@ -755,9 +755,13 @@ $num in $head-four-icon {
 .crm-container {
     position: absolute;
     top: 60px;
-    min-width: 1160px;
+    min-width: 1200px;
+    width: 100%;
     height: 100%;
 }
+
+
+/**左侧导航**/
 
 .nav-aside {
     position: absolute;
@@ -787,8 +791,8 @@ $num in $head-four-icon {
                 background: 0 0;
                 position: static;
             }
-            &:hover{
-                &+.add-list{
+            &:hover {
+                &+.add-list {
                     display: block;
                 }
             }
@@ -818,7 +822,7 @@ $num in $head-four-icon {
                     left: 38px;
                 }
             }
-            &:hover{
+            &:hover {
                 display: block;
             }
         }
@@ -827,13 +831,13 @@ $num in $head-four-icon {
         line-height: 48px;
         font-size: 13px;
         &.pend-list,
-        &.set-list{
-            a{
+        &.set-list {
+            a {
                 text-indent: 0;
-            }            
+            }
         }
-        &.dash-list{
-            a{
+        &.dash-list {
+            a {
                 text-indent: 30px;
             }
         }
@@ -844,6 +848,9 @@ $num in $head-four-icon {
             cursor: pointer;
         }
         .menu-slide {
+            .viewport {
+                height: 156px;
+            }
             ul {
                 li {
                     a {
@@ -855,7 +862,7 @@ $num in $head-four-icon {
                             text-decoration: none;
                             color: #fc923f;
                         }
-                        em{
+                        em {
                             top: 14px;
                             left: 34px;
                         }
@@ -874,10 +881,11 @@ $num in $head-four-icon {
     }
 }
 
-$leftnav-icon:( sale:22, cus:3, contact:4, clue:5, oppo:6, contract:12, cb:10, gb:11, bill:16, customer:8, order:13, recorder:14,index:0,info:1);
-@each $icon, $num in $leftnav-icon {
+$leftnav-icon:( sale:22, cus:3, contact:4, clue:5, oppo:6, contract:12, cb:10, gb:11, bill:16, customer:8, order:13, recorder:14, index:0, info:1);
+@each $icon,
+$num in $leftnav-icon {
     .add-list,
-    .menu-slide{
+    .menu-slide {
         a:hover {
             .ico-#{$icon} {
                 background-position: $num * -20px 0!important;
@@ -886,5 +894,346 @@ $leftnav-icon:( sale:22, cus:3, contact:4, clue:5, oppo:6, contract:12, cb:10, g
     }
     .ico-#{$icon} {
         background-position: $num * -20px -20px!important;
+    }
+}
+
+
+/**右侧主体**/
+
+.content-container {
+    position: absolute;
+    left: 200px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    .content-header {
+        height: 72px;
+        line-height: 72px;
+        padding: 0 20px;
+        background: #f4f6f9;
+        font-size: 24px;
+    }
+    .content-body {
+        /*position: absolute;*/
+        background: #fff;
+        .body-title {
+            ul {
+                padding-left: 10px;
+                border-bottom: 1px solid #EEE;
+                height: 54px;
+                line-height: 53px;
+                .title-list {
+                    display: inline-block;
+                    padding: 0 10px;
+                    font-size: 14px;
+                    a {
+                        display: block;
+                        color: #999;
+                        border-bottom: 2px solid transparent;
+                        &.active,
+                        &:hover {
+                            text-decoration: none;
+                            color: #333;
+                            border-color: #ff8837;
+                        }
+                    }
+                }
+            }
+        }
+        .body-main {
+            position: relative;
+            /*left: 0;
+            right: 0;
+            top: 55px;
+            bottom: 0;*/
+            .left-part {
+                /*position: absolute;*/
+                /*top: 0;
+                left: 0;*/
+                width: 675px;
+                .viewport{
+                    height: 300px;
+                }
+                .preset-box {
+                    padding: 40px 0 0 30px;
+                    .box-title {
+                        width: 605px;
+                        padding: 0 20px;
+                        margin-bottom: 10px;
+                        line-height: 40px;
+                        font-size: 16px;
+                        background-color: #f2f5fa;
+                        color: #666;
+                    }
+                    .box-item {
+                        position: relative;
+                        padding: 10px 0;
+                        margin-bottom: 10px!important;
+                        border: 1px dashed #fff;
+                        &:hover {
+                            background-color: #fff5e5;
+                            border-color: #f5ddb6;
+                            .delete-icon {
+                                display: block;
+                            }
+                        }
+                        .item-title {
+                            padding: 0 20px;
+                            border-bottom: 1px solid #f0f0f0;
+                        }
+                        .item-label {
+                            display: inline-block;
+                            padding-left: 20px;
+                            padding-right: 10px;
+                            width: 120px;
+                            color: #000;
+                            vertical-align: middle;
+                            @extend %fn-text-overflow;
+                            &.checkbox-item {
+                                margin-top: 10px;
+                                vertical-align: top;
+                            }
+                            span {
+                                position: relative;
+                                &.required {
+                                    &:before {
+                                        position: absolute;
+                                        left: -10px;
+                                        top: 1px;
+                                        content: '*';
+                                        color: #f00;
+                                    }
+                                }
+                            }
+                        }
+                        .input-box {
+                            display: inline-block;
+                            width: 335px;
+                            &.multi-select {
+                                width: 400px;
+                            }
+                            &.checkbox {
+                                margin-top: 10px;
+                            }
+                            input {
+                                width: 394px;
+                                height: 22px;
+                                line-height: 22px;
+                                padding: 5px 10px;
+                                border: 1px solid #ddd;
+                                border-radius: 3px;
+                                background: #fff!important;
+                            }
+                            .select-box {
+                                width: 245px;
+                                .select-wrapper {
+                                    position: relative;
+                                    height: 32px;
+                                    padding: 0 25px 0 10px;
+                                    line-height: 32px;
+                                    background: #fff;
+                                    border: 1px solid #ddd;
+                                    border-radius: 3px;
+                                    cursor: pointer;
+                                    .select-text {
+                                        width: 100%;
+                                    }
+                                    i {
+                                        position: absolute;
+                                        right: 10px;
+                                        top: 12px;
+                                        width: 12px;
+                                        height: 8px;
+                                        background: url(../images/bg.png) no-repeat 0 -10px;
+                                        background-size: 12px 18px;
+                                        overflow: hidden;
+                                    }
+                                }
+                            }
+                            .select-multibox {
+                                position: relative;
+                                display: inline-block;
+                                width: 150px;
+                                margin-right: 10px;
+                                padding: 0 10px;
+                                background-color: #fff;
+                                border-radius: 5px;
+                                line-height: 34px;
+                                border: 1px solid #ddd;
+                                i {
+                                    position: absolute;
+                                    right: 10px;
+                                    top: 12px;
+                                    width: 12px;
+                                    height: 8px;
+                                    background: url(../images/bg.png) no-repeat 0 -10px;
+                                    background-size: 12px 18px;
+                                    overflow: hidden;
+                                }
+                            }
+                            .checkbox-box {
+                                margin-bottom: 10px;
+                                padding-left: 5px;
+                                line-height: 15px;
+                                .checkbox-check {
+                                    display: inline-block;
+                                    width: 15px;
+                                    height: 15px;
+                                    background: url(../images/ico-check.png) no-repeat 0 -30px;
+                                    vertical-align: middle;
+                                }
+                                .checkbox-text {
+                                    padding: 0 25px 0 8px;
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                }
+                            }
+                        }
+                        .delete-icon {
+                            display: none;
+                            position: absolute;
+                            left: 581px;
+                            top: 8px;
+                            font-size: 20px;
+                            color: #e8be7c;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .add-box {
+                    width: 542px;
+                    margin-left: 50px;
+                    background-color: #fff;
+                    border: 1px dashed #4d6595;
+                    color: #576d99;
+                    .add-btn {
+                        line-height: 56px;
+                        font-size: 15px;
+                        text-align: center;
+                        cursor: pointer;
+                        &:hover {
+                            background: #e9ecf2;
+                        }
+                    }
+                }
+                .save-btn {
+                    margin-top: 20px;
+                    margin-left: 50px;
+                    padding: 0 30px;
+                    height: 32px;
+                    line-height: 32px;
+                    border: 1px solid #3e84e9;
+                    background-color: #3e84e9;
+                    border-radius: 3px;
+                    color: #fff!important;
+                    text-align: center;
+                    cursor: pointer;
+                    &:hover {
+                        border-color: #2f6dcf;
+                        background-color: #2f6dcf;
+                    }
+                }
+            }
+            .right-part {
+                position: absolute;
+                left: 675px;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                border-left: 1px solid #ebebeb;
+                background-color: #f7f9fc;
+                .set-box {
+                    width: 310px;
+                    padding: 40px 30px 0;
+                    .set-title {
+                        font-size: 18px;
+                        padding-bottom: 3px;
+                    }
+                    .set-description {
+                        padding-bottom: 15px;
+                        color: #999;
+                    }
+                    .set-field {
+                        padding: 15px 0;
+                        .field-name {
+                            display: block;
+                            padding-bottom: 10px;
+                            font-size: 14px;
+                        }
+                        input {
+                            width: 286px;
+                            padding: 5px 10px;
+                            height: 22px;
+                            line-height: 22px;
+                            border: 1px solid #ddd;
+                            border-radius: 3px;
+                            background-color: #fff;
+                        }
+                        .radio-icon {
+                            display: inline-block;
+                            width: 15px;
+                            height: 15px;
+                            vertical-align: middle;
+                            background-image: url(../images/ico-check.png)!important;
+                            background-repeat: no-repeat;
+                            background-position: -18px -31px;
+                            &:hover {
+                                background-position: -18px -16px;
+                            }
+                            &.selected {
+                                background-position: -18px 0;
+                            }
+                        }
+                        .radio-option {
+                            margin: 0 25px 0 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/**tinyscrollbar**/
+
+.tinyscrollbar {
+    position: relative;
+    .scrollbar {
+        width: 6px;
+        right: 1px;
+        position: absolute;
+        top: 0;
+        z-index: 2;
+        div {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            border-radius: 8px;
+            opacity: 0.4;
+        }
+        .track {
+            position: relative;
+            background-color: #e0e0e0;
+        }
+        .thumb {
+            position: absolute;
+            cursor: pointer;
+            background-color: #A2A2A2;
+            overflow: hidden;
+        }
+    }
+    .viewport {
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        .overview {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 0;
+            margin: 0;
+        }
     }
 }
